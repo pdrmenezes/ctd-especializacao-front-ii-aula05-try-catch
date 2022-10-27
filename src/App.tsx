@@ -19,7 +19,7 @@ const App = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch(`https://my-json-server.typicode.com/DH-Esp-Frontend/ctd-esp-front2-aula6-mesa3-main/postss`);
+      const response = await fetch(`https://my-json-server.typicode.com/DH-Esp-Frontend/ctd-esp-front2-aula6-mesa3-main/posts`);
       console.log(response);
 
       if (!response.ok) {
