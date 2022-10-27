@@ -20,8 +20,6 @@ const App = () => {
   const getData = async () => {
     try {
       const response = await fetch(`https://my-json-server.typicode.com/DH-Esp-Frontend/ctd-esp-front2-aula6-mesa3-main/posts`);
-      console.log(response);
-
       if (!response.ok) {
         throw new Error(`Erro HTTP. Status: ${response.status}`);
       }
@@ -29,7 +27,7 @@ const App = () => {
       setData(actualData);
       setError(null);
     } catch (err) {
-      setError("Erro ao buscar posts");
+      setError("Erro ao buscar posts" + err);
       setData(null);
     } finally {
       setLoading(false);
@@ -42,8 +40,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Notícias de Rick and Morty</h1>
-      {loading && <p>Um momento por favor...</p>}
+      <h1>Notícias de Rick & Morty</h1>
+      {loading && <p>Carregando publicações...</p>}
       {error && (
         <p>
           Houve um problema: <code>{error}</code>
